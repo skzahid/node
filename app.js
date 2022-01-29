@@ -5,13 +5,14 @@ const mongoose = require('mongoose');
 const blogRoutes = require('./routes/blogRoutes');
 // express app
 const app = express();
+const port = process.env.PORt || 8080
 
 // connect to mongodb & listen for requests
 const dbURI = 'mongodb+srv://global:y2lZPNnZtxMZb0Ay@cluster0.m28il.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(result => app.listen(8080))
-  .catch(err => console.log(err));
+//  .then(result => app.listen(8080))
+ // .catch(err => console.log(err));
 
 // register view engine
 app.set('view engine', 'ejs'); 
